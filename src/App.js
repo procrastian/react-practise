@@ -1,16 +1,15 @@
 import './App.css';
 // import { AppTitle } from './Components/AppTitle'
-import { MessageBoard } from './Components/MessageBoard'
-
-// update the name of the App being tested
-// const projectTitle = 'Messenger App'
+// import { MessageBoard } from './Components/MessageBoard'
+import { DiceRoller } from './Components/DiceRoller'
 
 function App() {
   return (
     <div className='App'>
       <header className='App-header'>
         {/* <AppTitle projectTitle={projectTitle}/> */}
-        <MessageBoard />
+        {/* <MessageBoard /> */}
+        <DiceRoller />
       </header>
     </div>
   );
