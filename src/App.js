@@ -1,14 +1,18 @@
 import './App.css';
-import { AppTitle } from './Components/AppTitle'
+// import { AppTitle } from './Components/AppTitle'
+import { MessageBoard } from './Components/MessageBoard'
 
 // update the name of the App being tested
-const projectTitle = 'Messenger App'
+// const projectTitle = 'Messenger App'
 
 function App() {
   return (
-
-    <AppTitle projectTitle={projectTitle}/>
-
+    <div className='App'>
+      <header className='App-header'>
+        {/* <AppTitle projectTitle={projectTitle}/> */}
+        <MessageBoard />
+      </header>
+    </div>
   );
 }
 
