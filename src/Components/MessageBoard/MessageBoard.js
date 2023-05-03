@@ -3,12 +3,12 @@ import { Message } from '../Message'
 
 const initialMessages = [
     {
-        author: 'User A',
+        author: 'A',
         content: 'Hello',
         heard: false
     },
     {
-        author: 'User B',
+        author: 'B',
         content: 'Goodbye',
         heard: true
     }
@@ -49,6 +49,15 @@ function MessageBoard () {
         setMessageState(updatedMessages)
     }
 
+    const handleDelete = (message) => {
+        const newMessages = messageState.filter(item => {
+            if (item !== message) {
+                return message
+            }
+        })
+        setMessageState(newMessages)
+    }
+
     return (
 
         <div>
@@ -76,6 +85,7 @@ function MessageBoard () {
                         key={index} 
                         message={messageObj}
                         handleUpdate={handleUpdate}
+                        handleDelete={handleDelete}
                     />)
             }
 
