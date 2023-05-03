@@ -1,11 +1,21 @@
-function Message ({ message }) {
+function Message ({ message, handleUpdate }) {
+
+const heardStyles = {
+    textDecoration: 'line-through',
+    color: 'red'
+}
+
+const handleChange = (e) => {
+    handleUpdate(message, e.target.checked)
+}
 
     return (
 
         <>
-            {/* {console.log('author?', message.author)}
-            {console.log('content?', message.content)} */}
-            <p>{message.author} says: {message.content}</p>
+            
+            <span style={message.heard ? heardStyles : {}}>{message.author} says: {message.content}</span>
+            <input type="checkbox" onChange={handleChange} checked={message.heard}/>
+            <br/>
         </>
     
         )

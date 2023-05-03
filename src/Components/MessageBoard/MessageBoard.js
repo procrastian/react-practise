@@ -4,11 +4,13 @@ import { Message } from '../Message'
 const initialMessages = [
     {
         author: 'User A',
-        content: 'Hello'
+        content: 'Hello',
+        heard: false
     },
     {
         author: 'User B',
-        content: 'Goodbye'
+        content: 'Goodbye',
+        heard: true
     }
 ]
 
@@ -24,7 +26,8 @@ function MessageBoard () {
 
         const newMessage = {
             author: `${newAuthor}`,
-            content: `${newContent}`
+            content: `${newContent}`,
+            heard: false
         }
 
 
@@ -32,7 +35,19 @@ function MessageBoard () {
         setMessageState([newMessage, ...messageState])
     }
 
-
+    const handleUpdate = (message, value) => {
+        const updatedMessages = messageState.map(item => {
+            if (item === message) {
+                return {
+                    ...message,
+                    heard: value
+                }
+            } else {
+                return item
+            }
+        })
+        setMessageState(updatedMessages)
+    }
 
     return (
 
@@ -59,7 +74,9 @@ function MessageBoard () {
                 messageState.map(
                     (messageObj, index) => <Message 
                         key={index} 
-                        message={messageObj}/>)
+                        message={messageObj}
+                        handleUpdate={handleUpdate}
+                    />)
             }
 
         </div>

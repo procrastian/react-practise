@@ -17,12 +17,8 @@ const [result, setResult] = useState(initialRoll)
 const handleRoll = (e) => {
     e.preventDefault()
 
-    console.log('value', e.target[0].value)
-    console.log('Number', Number(e.target[0].value))
-
     const userNum = Number(e.target[0].value)
     const rolledNum = Math.floor((Math.random()*userNum) +1)
-
     const newRoll = {
         diceType: `D-${userNum}`,
         result: `rolled a ${rolledNum}!`
