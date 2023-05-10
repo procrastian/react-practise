@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+a.home {
+  color: lightcyan
+}
+
+a:hover {
+  color: lightyellow
+}

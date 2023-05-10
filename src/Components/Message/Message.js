@@ -4,6 +4,7 @@ const heardStyles = {
     textDecoration: 'line-through',
 }
 
+
 const handleChange = (e) => {
     handleUpdate(message, e.target.checked)
 }
@@ -21,7 +22,10 @@ const handleClick = () => {
             {
                 message.author === 'C' && <span> 💀 </span>
             }
-            <span style={message.heard ? heardStyles : {}}>{message.author} says: {message.content}</span>
+            <span style={message.heard ? heardStyles : {}}>
+                {message.author} says: {message.content}
+            </span>
+            
             <input type="checkbox" onChange={handleChange} checked={message.heard}/>
             <button onClick={handleClick}>DEL</button>
             <br/>

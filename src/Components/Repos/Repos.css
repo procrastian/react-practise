@@ -1,0 +1,11 @@
+a.repoLink {
+    color: lightcoral
+}
+
+a:hover {
+    color: lightyellow
+  }
+
+a:visited {
+    color: coral
+}

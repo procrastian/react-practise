@@ -30,8 +30,6 @@ function MessageBoard () {
             heard: false
         }
 
-
-
         setMessageState([newMessage, ...messageState])
     }
 
@@ -67,16 +65,16 @@ function MessageBoard () {
                     Who's Talking?
                     <br/>
                     <input type = 'text'/>
-                    <hr/>
+                    <br/>
                 </label>
                 <label>
                     What's happening?
                     <br/>
                     <input type = 'text'/>
-                    <hr/>
+                    <br/>
                 </label>
-                
                 <button>Chat</button>
+                <hr/>
             </form>
             
             {
