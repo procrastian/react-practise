@@ -7,16 +7,19 @@ function Form({setNotes, notes}) {
 const [comment, setComment] = useState({})
 const params = useParams();
 
-const newComment = {
-    id: Math.random(),
-    name: params.reponame,
-    comment: comment,
-  }
 
 
 function handleSubmit (e) {
   e.preventDefault()
   console.log({comment})
+
+  
+const newComment = {
+  id: Math.random(),
+  name: params.reponame,
+  comment: comment,
+}
+
 
   const opts = {
     method: "POST",
@@ -26,12 +29,14 @@ function handleSubmit (e) {
     body: JSON.stringify(newComment)
   }
 
+
   fetch('http://localhost:4000/notes', opts)
-  .then(function (response) {
-  return response.json()
+  .then(response => response.json())
+  .then(data => {
+    // setNotes([newComment, ...notes]);
+    setComment('');
   })
-  
-  setNotes([newComment, ...notes])
+  // .catch(error => console.error(error));
 }
 
 const changeComment = (e) => {

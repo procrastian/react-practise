@@ -54,10 +54,10 @@ export default function Repo() {
            className={'repoLink'} to={`/${params.username}/${params.reponame}/notes/add`}> <button >Add a new comment</button></Link>
             <ul>
                 {
-                notes.map((note => (
-                        note.name === `${params.reponame}` && <li>{note.content}</li>
+                notes.map((note => (    
+                  note.name === `${params.reponame}` && <li>{note.comment}</li>
                     ))
-                )
+                ).reverse()
                 }
             </ul>
           </div>
