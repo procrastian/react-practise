@@ -21,6 +21,7 @@ export default function Repos () {
             } else {
                 setNotFound(false)
                 setRepos(data)
+                console.log(data)
             }
         })
     }, [username])

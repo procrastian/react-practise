@@ -9,3 +9,7 @@ a:hover {
 a:visited {
     color: coral
 }
+
+li {
+    list-style: none;
+}

@@ -15,7 +15,7 @@ export default function App() {
         {/* <DiceRoller /> */}
 
         <>
-          <Link className='home' to='/'>HOME</Link>
+          <Link to='/'>HOME</Link>
           <Routes>
             <Route 
               path='/'
