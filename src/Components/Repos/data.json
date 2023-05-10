@@ -1,46 +1,8 @@
 {
-
-"notes": [
-  repo 1: {
-    note 1 
-    note 2
-    ...
-  },
-  repo 2: {
-    note 1 {
-      content
-    }
-    note 2
-    ...
-  }
-]
-
-}
-if repo name === notes.reponame
-notes.content - render all them
-
-{
-  notes: [
+  "notes": [
     {
-      repo 1 name
-      id
-      content (all the notes) {
-        note 1 
-        note 2
-        ...
-        <insert new note here>
+      "id": 1,
+      "content": "my first comment"
       }
-    },
-    {
-      repo 2 name
-      id
-      content
-    },
-    {
-      repo 3 name
-      id
-      content
-    },
-
   ]
 }

@@ -4,7 +4,8 @@ import './App.css';
 // import { DiceRoller } from './Components/DiceRoller'
 
 import { Routes, Route, Link } from 'react-router-dom'
-import { Repo, Repos } from './Components/Repos'
+import { Repo, Repos, Form } from './Components/Repos'
+
 
 export default function App() {
   return (
@@ -24,6 +25,11 @@ export default function App() {
             <Route 
               path='/:username/:reponame'
               element={<Repo />}
+            />
+               <Route 
+              path='/:username/:reponame/:notes/add'
+              element={<Form />}
+              
             />
           </Routes>
         </>
