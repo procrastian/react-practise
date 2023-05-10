@@ -1,11 +1,12 @@
 
 import { useState, } from 'react'
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 function Form({setNotes, notes}) {
 
 const [comment, setComment] = useState({})
 const params = useParams();
+const navigate = useNavigate()
 
 
 
@@ -37,6 +38,7 @@ const newComment = {
     setComment('');
   })
   // .catch(error => console.error(error));
+  navigate(`/${params.username}/${params.reponame}`);
 }
 
 const changeComment = (e) => {
