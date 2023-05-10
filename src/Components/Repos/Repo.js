@@ -5,7 +5,7 @@ import "./Repos.css";
 export default function Repo() {
   const [repo, setRepo] = useState({});
   const [notFound, setNotFound] = useState(false);
-  const [notes, setNotes] = useState({})
+  const [notes, setNotes] = useState([])
 
   const params = useParams();
 
@@ -22,6 +22,14 @@ export default function Repo() {
         }
       });
   }, []);
+
+  useEffect(() => {
+    fetch('http://localhost:4000/notes')
+    .then(res => res.json())
+    .then((data) =>setNotes(data))
+  }, [])
+
+
 
   return (
     <>
@@ -40,11 +48,17 @@ export default function Repo() {
           </div>
           <div>
             <h3>Comment Section</h3>
-           <Link className={'repoLink'} to={`/${params.username}/${params.reponame}/notes/add`}> <button >Add a new comment</button></Link>
+           <Link 
+        //    setNotes={setNotes} notes={notes} 
+            state={{notes, setNotes}}
+           className={'repoLink'} to={`/${params.username}/${params.reponame}/notes/add`}> <button >Add a new comment</button></Link>
             <ul>
-              <li>comment 3</li>
-              <li>comment 2</li>
-              <li>comment 1</li>
+                {
+                notes.map((note => (
+                        note.name === `${params.reponame}` && <li>{note.content}</li>
+                    ))
+                )
+                }
             </ul>
           </div>
         </>
