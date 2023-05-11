@@ -75,8 +75,12 @@ fetch(`http://localhost:4000/notes/${id}`, opts)
             <ul>
                 {
                 notes.map((note => (    
-                  note.name === `${params.reponame}` && <><li>{note.comment}  <button>EDIT</button>
-                  <button value={note.id} onClick={handleDelete}>DEL</button></li>
+                  note.name === `${params.reponame}` && note.username === `${params.username}` && 
+                  <>
+                    <li>{note.comment}  
+                      <Link className="repoLink" to={`/${params.username}/${params.reponame}/notes/${note.id}/edit`}><button>EDIT</button></Link>
+                      <button value={note.id} onClick={handleDelete}>DEL</button>
+                    </li>
                  
                   </> ))
                 ).reverse()

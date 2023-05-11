@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react"
-import { useParams, Link } from "react-router-dom";
+import { useState } from "react"
+import { Link } from "react-router-dom";
 
 
 
@@ -25,11 +25,6 @@ function Home () {
         </form>
         </>
     )
-// form that has an input field
-// text input 
-    // >>username for URL path
-// button 
-    // >> link to repos list page using the username input 
 
     
 
