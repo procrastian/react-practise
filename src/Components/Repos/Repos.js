@@ -34,16 +34,12 @@ export default function Repos() {
   const handleChange = (e) => {
     setFormData({ ...formData, github: e.target.value });
   };
-  console.log(repos[0].name);
-  console.log(typeof repos[0]);
 
   return (
     <>
       {notFound && <div>user '{username}' does not exist</div>}
       {!notFound && <h4>{username}'s Repos</h4>}
-      {/* <img alt={"avatar"} src={`${repos[0].owner.avatar_url.value}`} /> */}
-
-      {/* console.log({repos[0].owner.avatar_url.value}) */}
+      <img alt={"avatar"} src={`${repos[0].owner.avatar_url}`} />
       {repos.map((repo) => (
         <div>
           <Link className={"repoLink"} to={`/${username}/${repo.name}`}>
