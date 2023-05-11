@@ -12,10 +12,6 @@ export default function Repos() {
     fetch(`https://api.github.com/users/${username}/repos`)
       .then((res) => res.json())
       .then((data) => {
-        console.log('data', data)
-        console.log('data[0]', data[0])
-        console.log('owner', data[0].owner)
-        console.log('avatar_url', data[0].owner.avatar_url)
         if (data.message === "Not Found") {
           setNotFound(true);
         } else {

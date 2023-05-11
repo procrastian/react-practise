@@ -33,6 +33,7 @@ export default function Repo() {
 
   return (
     <>
+       <Link className="repoLink" to ={`/${params.username}`}><button>{params.username}'s repos</button></Link>
       {notFound ? (
         <div>
           repo '{params.reponame}' of user '{params.username}' does not exist
