@@ -3,12 +3,12 @@ import { useState, useEffect} from 'react'
 import './Repos.css'
 
 const initialFormData = {
-    github: 'procrastian'
+    github: ''
 }
 
 export default function Repos () {
     const [repos, setRepos] = useState([])
-    const [username, setUsername] = useState('procrastian')
+    const [username, setUsername] = useState('')
     const [formData, setFormData] = useState(initialFormData)
     const [notFound, setNotFound] = useState(false)
 
