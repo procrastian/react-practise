@@ -27,7 +27,27 @@ export default function Repo() {
     fetch('http://localhost:4000/notes')
     .then(res => res.json())
     .then((data) =>setNotes(data))
-  }, [])
+  }, [notes])
+
+const handleDelete = (e) => {
+  let id = e.target.value
+console.log('my id', id)
+
+const filteredComments = notes.filter(note => {
+  if(note.id !== id)  {
+  return note 
+  }
+})
+
+setNotes(filteredComments)
+
+const opts = {
+  method: "DELETE",
+};
+fetch(`http://localhost:4000/notes/${id}`, opts)
+.then(res => res.text())
+.then(res => console.log(res))
+}
 
 
 
@@ -55,8 +75,10 @@ export default function Repo() {
             <ul>
                 {
                 notes.map((note => (    
-                  note.name === `${params.reponame}` && <li>{note.comment}</li>
-                    ))
+                  note.name === `${params.reponame}` && <><li>{note.comment}  <button>EDIT</button>
+                  <button value={note.id} onClick={handleDelete}>DEL</button></li>
+                 
+                  </> ))
                 ).reverse()
                 }
             </ul>

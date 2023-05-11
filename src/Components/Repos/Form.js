@@ -19,6 +19,7 @@ const newComment = {
   id: Math.random(),
   name: params.reponame,
   comment: comment,
+  username:params.username
 }
 
 
