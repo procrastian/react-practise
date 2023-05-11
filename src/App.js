@@ -4,7 +4,7 @@ import './App.css';
 // import { DiceRoller } from './Components/DiceRoller'
 
 import { Routes, Route, Link } from 'react-router-dom'
-import { Repo, Repos, Form } from './Components/Repos'
+import { Repo, Repos, Form, Home } from './Components/Repos'
 
 
 export default function App() {
@@ -19,7 +19,11 @@ export default function App() {
           <Link to='/'>HOME</Link>
           <Routes>
             <Route 
-              path='/'
+             path='/'
+             element={<Home />}
+            />
+            <Route 
+              path='/:username'
               element={<Repos />}
             />
             <Route 

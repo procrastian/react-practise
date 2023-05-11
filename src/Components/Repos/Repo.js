@@ -49,7 +49,6 @@ export default function Repo() {
           <div>
             <h3>Comment Section</h3>
            <Link 
-        //    setNotes={setNotes} notes={notes} 
             state={{notes, setNotes}}
            className={'repoLink'} to={`/${params.username}/${params.reponame}/notes/add`}> <button >Add a new comment</button></Link>
             <ul>
@@ -67,5 +66,3 @@ export default function Repo() {
   );
 }
 
-
-// <Link className={'repoLink'} to={`/${username}/${repo.name}`}>{repo.name}</Link>
