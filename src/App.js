@@ -26,7 +26,7 @@ export default function App() {
              element={<Home />}
             />
             <Route 
-              path='/:notes'
+              path='/notes'
               element={<AllNotes />}
             />
             <Route 

@@ -32,7 +32,3 @@ export default function AllNotes () {
         </>
     )
 }
-
-
-//fetch all notes
-//render all notes
