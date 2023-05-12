@@ -7,6 +7,8 @@ export default function Repo() {
   const [notFound, setNotFound] = useState(false);
   const [notes, setNotes] = useState([])
 
+  const test ='test'
+
   const params = useParams();
 
   useEffect(() => {
@@ -51,6 +53,7 @@ fetch(`http://localhost:4000/notes/${id}`, opts)
 
 
 
+
   return (
     <>
        <Link className="repoLink" to ={`/${params.username}`}><button>{params.username}'s repos</button></Link>
@@ -78,7 +81,7 @@ fetch(`http://localhost:4000/notes/${id}`, opts)
                   note.name === `${params.reponame}` && note.username === `${params.username}` && 
                   <>
                     <li>{note.comment}  
-                      <Link className="repoLink" to={`/${params.username}/${params.reponame}/notes/${note.id}/edit`}><button>EDIT</button></Link>
+                      <Link test={test} className="repoLink" to={`/${params.username}/${params.reponame}/notes/${note.id}/edit`} ><button>EDIT</button></Link>
                       <button value={note.id} onClick={handleDelete}>DEL</button>
                     </li>
                  
