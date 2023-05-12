@@ -8,12 +8,12 @@ function Edit() {
   const [comment, setComment] = useState("");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch("http://localhost:4000/notes")
-      .then((res) => res.json())
-      .then((data) => setNotes(data));
-    console.log(notes);
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:4000/notes")
+  //     .then((res) => res.json())
+  //     .then((data) => setNotes(data));
+  //   console.log(notes);
+  // }, []);
 
   function handleSubmit(e) {
     e.preventDefault();

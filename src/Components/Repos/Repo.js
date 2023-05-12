@@ -5,6 +5,7 @@ export default function Repo() {
   const [repo, setRepo] = useState({});
   const [notFound, setNotFound] = useState(false);
   const [notes, setNotes] = useState([]);
+  const [deleted, setDeleted] = useState([])
 
   const test = "test";
 
@@ -25,17 +26,22 @@ export default function Repo() {
   }, []);
 
   useEffect(() => {
+
     fetch("http://localhost:4000/notes")
       .then((res) => res.json())
-      .then((data) => setNotes(data));
-  }, [notes]);
+      .then((data) => setNotes(data))
+  }, [deleted]);
 
+
+
+  
   const handleDelete = (e) => {
     let id = e.target.value;
     console.log("my id", id);
 
     const filteredComments = notes.filter((note) => {
       if (note.id !== id) {
+        console.log('note', note)
         return note;
       }
     });
@@ -47,7 +53,7 @@ export default function Repo() {
     };
     fetch(`http://localhost:4000/notes/${id}`, opts)
       .then((res) => res.text())
-      .then((res) => console.log(res));
+      .then((res) => setDeleted(res));
   };
 
   return (

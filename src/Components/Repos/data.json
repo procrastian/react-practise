@@ -7,12 +7,6 @@
       "username": "carolarruda"
     },
     {
-      "id": 17988699382593054,
-      "name": "cohort-10-react-demo",
-      "comment": "Wtf???",
-      "username": "procrastian"
-    },
-    {
       "id": 0.5734087035840797,
       "name": "developer-environment-setup",
       "comment": "New comment here\n",
@@ -29,6 +23,12 @@
       "name": "Ca2",
       "comment": "4567",
       "username": "timmyctt"
+    },
+    {
+      "id": 0.6013989860560529,
+      "name": "cohort-10-react-demo",
+      "comment": "gearger",
+      "username": "procrastian"
     }
   ]
 }
