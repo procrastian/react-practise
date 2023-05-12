@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import "./Repos.css";
-
 export default function Repo() {
   const [repo, setRepo] = useState({});
   const [notFound, setNotFound] = useState(false);
   const [notes, setNotes] = useState([]);
+
+  const test = "test";
 
   const params = useParams();
 
@@ -27,10 +28,33 @@ export default function Repo() {
     fetch("http://localhost:4000/notes")
       .then((res) => res.json())
       .then((data) => setNotes(data));
-  }, []);
+  }, [notes]);
+
+  const handleDelete = (e) => {
+    let id = e.target.value;
+    console.log("my id", id);
+
+    const filteredComments = notes.filter((note) => {
+      if (note.id !== id) {
+        return note;
+      }
+    });
+
+    setNotes(filteredComments);
+
+    const opts = {
+      method: "DELETE",
+    };
+    fetch(`http://localhost:4000/notes/${id}`, opts)
+      .then((res) => res.text())
+      .then((res) => console.log(res));
+  };
 
   return (
     <>
+      <Link className="repoLink" to={`/${params.username}`}>
+        <button>{params.username}'s repos</button>
+      </Link>
       {notFound ? (
         <div>
           repo '{params.reponame}' of user '{params.username}' does not exist
@@ -58,8 +82,23 @@ export default function Repo() {
               {notes
                 .map(
                   (note) =>
-                    note.name === `${params.reponame}` && (
-                      <li>{note.comment}</li>
+                    note.name === `${params.reponame}` &&
+                    note.username === `${params.username}` && (
+                      <>
+                        <li>
+                          {note.comment}
+                          <Link
+                            test={test}
+                            className="repoLink"
+                            to={`/${params.username}/${params.reponame}/notes/${note.id}/edit`}
+                          >
+                            <button>EDIT</button>
+                          </Link>
+                          <button value={note.id} onClick={handleDelete}>
+                            DEL
+                          </button>
+                        </li>
+                      </>
                     )
                 )
                 .reverse()}
