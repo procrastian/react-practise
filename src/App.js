@@ -5,6 +5,7 @@ import './App.css';
 
 import { Routes, Route, Link } from 'react-router-dom'
 import { Repo, Repos, Form, Home, Edit } from './Components/Repos'
+import AllNotes from './Components/Repos/AllNotes';
 
 
 export default function App() {
@@ -17,10 +18,16 @@ export default function App() {
 
         <>
           <Link to='/'>HOME</Link>
+          <Link to='/notes'>ALL NOTES</Link>
+
           <Routes>
             <Route 
              path='/'
              element={<Home />}
+            />
+            <Route 
+              path='/:notes'
+              element={<AllNotes />}
             />
             <Route 
               path='/:username'
