@@ -6,8 +6,9 @@ export default function Repo() {
   const [notFound, setNotFound] = useState(false);
   const [notes, setNotes] = useState([]);
   const [deleted, setDeleted] = useState([])
+  const [notesChanged, setNotesChanged] = useState(false);
 
-  const test = "test";
+
 
   const params = useParams();
 
@@ -26,11 +27,11 @@ export default function Repo() {
   }, []);
 
   useEffect(() => {
-
+   
     fetch("http://localhost:4000/notes")
       .then((res) => res.json())
       .then((data) => setNotes(data))
-  }, [deleted]);
+  }, [notes]);
 
 
 
@@ -47,6 +48,7 @@ export default function Repo() {
     });
 
     setNotes(filteredComments);
+   
 
     const opts = {
       method: "DELETE",
@@ -94,7 +96,7 @@ export default function Repo() {
                         <li>
                           {note.comment}
                           <Link
-                            test={test}
+                    
                             className="repoLink"
                             to={`/${params.username}/${params.reponame}/notes/${note.id}/edit`}
                           >

@@ -30,6 +30,7 @@ export default function AllNotes () {
         } else {
            const filteredNotes = notes.filter((note) => {
                 return note.comment.toLowerCase().includes(searchTerm.toLowerCase());
+
             });
             setFilteredNotes(filteredNotes);
         }

@@ -1,8 +1,7 @@
-
 import { useState, } from 'react'
 import { useParams, useNavigate } from "react-router-dom";
 
-function Form({setNotes, notes}) {
+function Form({handleNotes}) {
 
 const [comment, setComment] = useState({})
 const params = useParams();
@@ -35,7 +34,7 @@ const newComment = {
   fetch('http://localhost:4000/notes', opts)
   .then(response => response.json())
   .then(data => {
-    // setNotes([newComment, ...notes]);
+    handleNotes(newComment)
     setComment('');
   })
   // .catch(error => console.error(error));
