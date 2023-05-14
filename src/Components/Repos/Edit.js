@@ -69,6 +69,7 @@ function Edit() {
                   cols={30}
                   defaultValue={note.comment}
                   value={comment}
+                  required
                 />
                 <br />
                 <button type="submit">Update</button>

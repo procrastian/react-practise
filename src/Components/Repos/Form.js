@@ -48,7 +48,7 @@ const changeComment = (e) => {
   return (
   
     <form onSubmit={handleSubmit}>
-      <textarea onChange={changeComment} type="text" placeholder="Hi there" rows={10} cols={30} value={comment.value}/>
+      <textarea onChange={changeComment} type="text" placeholder="Hi there" rows={10} cols={30} value={comment.value} required/>
       <br></br>
       <input type="submit" value="Submit your note"/>
     </form>

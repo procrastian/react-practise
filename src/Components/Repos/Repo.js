@@ -48,7 +48,7 @@ export default function Repo() {
     });
 
     setNotes(filteredComments);
-   
+    setNotesChanged(!notesChanged)
 
     const opts = {
       method: "DELETE",
