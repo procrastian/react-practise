@@ -5,9 +5,6 @@ export default function Repo() {
   const [repo, setRepo] = useState({});
   const [notFound, setNotFound] = useState(false);
   const [notes, setNotes] = useState([]);
-  const [deleted, setDeleted] = useState([])
-  const [notesChanged, setNotesChanged] = useState(false);
-
 
 
   const params = useParams();
@@ -27,16 +24,15 @@ export default function Repo() {
   }, []);
 
   useEffect(() => {
-   
+
     fetch("http://localhost:4000/notes")
       .then((res) => res.json())
       .then((data) => setNotes(data))
-  }, [notes]);
+  }, [setNotes]);
 
-
-
-  
+ 
   const handleDelete = (e) => {
+
     let id = e.target.value;
     console.log("my id", id);
 
@@ -46,17 +42,25 @@ export default function Repo() {
         return note;
       }
     });
-
     setNotes(filteredComments);
-    setNotesChanged(!notesChanged)
 
     const opts = {
       method: "DELETE",
     };
     fetch(`http://localhost:4000/notes/${id}`, opts)
-      .then((res) => res.text())
-      .then((res) => setDeleted(res));
+    .then(response => response.json())
+    .then(() => {
+      fetch("http://localhost:4000/Notes")
+      .then(res => res.json())
+      .then(data => {
+        setNotes(data)
+        console.log(data)
+      })
+    })
   };
+
+  
+ 
 
   return (
     <>
@@ -83,8 +87,7 @@ export default function Repo() {
               className={"repoLink"}
               to={`/${params.username}/${params.reponame}/notes/add`}
             >
-              {" "}
-              <button>Add a new comment</button>
+              <button >Add a new comment</button>
             </Link>
             <ul>
               {notes
@@ -96,7 +99,6 @@ export default function Repo() {
                         <li>
                           {note.comment}
                           <Link
-                    
                             className="repoLink"
                             to={`/${params.username}/${params.reponame}/notes/${note.id}/edit`}
                           >

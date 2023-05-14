@@ -19,6 +19,7 @@ export default function AllNotes () {
 
       const handleSubmit =(e) => {
         e.preventDefault()
+        
       }
 
       const handleSearch = (event) => {
