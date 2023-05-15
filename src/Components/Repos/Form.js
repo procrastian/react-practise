@@ -8,30 +8,23 @@ const params = useParams();
 const navigate = useNavigate()
 const [notes, setNotes] = useState([]);
 
-
 useEffect(() => {
   fetch("http://localhost:4000/notes")
     .then((res) => res.json())
     .then((data) => 
       setNotes(data))
-
-
 }, []);
-
-
 
 function handleSubmit (e) {
   e.preventDefault()
   console.log({comment})
 
-
 const newComment = {
-  id: Math.random(),
   name: params.reponame,
   comment: comment,
-  username:params.username
+  username:params.username,
+  timestamp: new Date()
 }
-
 
   const opts = {
     method: "POST",
@@ -41,15 +34,11 @@ const newComment = {
     body: JSON.stringify(newComment)
   }
 
-
   fetch('http://localhost:4000/notes', opts)
   .then(response => response.json())
   .then(() => {
-    setNotes(notes);
     navigate(`/${params.username}/${params.reponame}`);    
   });
-
-
 }
 
 const changeComment = (e) => {
@@ -57,13 +46,11 @@ const changeComment = (e) => {
 }
 
   return (
-  
     <form onSubmit={handleSubmit}>
       <textarea onChange={changeComment} type="text" placeholder="Hi there" rows={10} cols={30} value={comment.value} required/>
       <br></br>
       <input type="submit" value="Submit your note"/>
     </form>
-
   );
 }
 

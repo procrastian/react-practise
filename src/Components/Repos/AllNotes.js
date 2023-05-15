@@ -31,7 +31,6 @@ export default function AllNotes () {
         } else {
            const filteredNotes = notes.filter((note) => {
                 return note.comment.toLowerCase().includes(searchTerm.toLowerCase());
-
             });
             setFilteredNotes(filteredNotes);
         }
@@ -61,9 +60,11 @@ export default function AllNotes () {
                         repo: {note.name}
                         <br />
                         {note.comment}
+                        <br />
+                        <p>{(new Date(Date.parse(note.timestamp))).toLocaleDateString()} {(new Date(Date.parse(note.timestamp))).toLocaleTimeString()} </p>
                         <hr />
                     </li>
-                ))}
+                )).reverse()}
             </ul>
         </>
     );

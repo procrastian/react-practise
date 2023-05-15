@@ -28,8 +28,7 @@ export default function Repo() {
     fetch("http://localhost:4000/notes")
       .then((res) => res.json())
       .then((data) => setNotes(data))
-  }, [setNotes]);
-
+  }, []);
  
   const handleDelete = (e) => {
 
@@ -50,17 +49,13 @@ export default function Repo() {
     fetch(`http://localhost:4000/notes/${id}`, opts)
     .then(response => response.json())
     .then(() => {
-      fetch("http://localhost:4000/Notes")
+      fetch("http://localhost:4000/notes")
       .then(res => res.json())
       .then(data => {
         setNotes(data)
-        console.log(data)
       })
     })
   };
-
-  
- 
 
   return (
     <>

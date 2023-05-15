@@ -1,82 +1,53 @@
 {
   "notes": [
     {
-      "id": 0.5734087035840797,
       "name": "developer-environment-setup",
-      "comment": "New comment here\n",
-      "username": "carolarruda"
+      "comment": "Hey",
+      "username": "carolarruda",
+      "timestamp": "2023-05-15T10:18:08.721Z",
+      "id": 3
     },
     {
-      "id": 0.4909790332742836,
-      "name": "Ca2",
-      "comment": "123",
-      "username": "timmyctt"
-    },
-    {
-      "id": 0.650792611600538,
-      "name": "Ca2",
-      "comment": "4567",
-      "username": "timmyctt"
-    },
-    {
-      "id": 0.6013989860560529,
       "name": "cohort-10-react-demo",
-      "comment": "geargerbadfbadfbswew",
-      "username": "procrastian"
+      "comment": "new",
+      "username": "procrastian",
+      "timestamp": "2023-05-15T10:55:02.455Z",
+      "id": 4
     },
     {
-      "id": 0.3418916089673756,
       "name": "cohort-10-react-demo",
-      "comment": "yayyyyyy",
-      "username": "procrastian"
+      "comment": "xvcxvcvc",
+      "username": "procrastian",
+      "timestamp": "2023-05-15T11:40:38.255Z",
+      "id": 5
     },
     {
-      "id": 0.4307795586594696,
-      "name": "html-boolean-image-grid",
-      "comment": "loooooooks gooooood",
-      "username": "timmyctt"
-    },
-    {
-      "id": 0.9758548237672344,
-      "name": "developer-environment-setup",
-      "comment": "woooo!!!!!",
-      "username": "carolarruda"
-    },
-    {
-      "id": 0.05815860664895944,
-      "name": "html-boolean-image-grid",
-      "comment": "Alex say's it's easy!",
-      "username": "alexjshaw"
-    },
-    {
-      "id": 0.4872334154529703,
       "name": "cohort-10-react-demo",
-      "comment": "10",
-      "username": "carolarruda"
+      "comment": "dfdgerfghyer",
+      "username": "procrastian",
+      "timestamp": "2023-05-15T11:50:54.351Z",
+      "id": 6
     },
     {
-      "id": 0.21705512184343978,
       "name": "cohort-10-react-demo",
-      "comment": "2",
-      "username": "carolarruda"
+      "comment": "ryertyetye",
+      "username": "procrastian",
+      "timestamp": "2023-05-15T11:50:56.366Z",
+      "id": 7
     },
     {
-      "id": 0.5133434175723361,
       "name": "cohort-10-react-demo",
-      "comment": "3",
-      "username": "carolarruda"
+      "comment": "dyhrtyertyeyrt",
+      "username": "procrastian",
+      "timestamp": "2023-05-15T11:51:16.376Z",
+      "id": 8
     },
     {
-      "id": 0.5036150887397011,
       "name": "cohort-10-react-demo",
-      "comment": "5",
-      "username": "carolarruda"
-    },
-    {
-      "id": 0.6055150304225058,
-      "name": "cohort-10-react-demo",
-      "comment": " s",
-      "username": "carolarruda"
+      "comment": "tyeryter",
+      "username": "procrastian",
+      "timestamp": "2023-05-15T11:51:18.676Z",
+      "id": 9
     }
   ]
 }
