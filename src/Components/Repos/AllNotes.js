@@ -21,7 +21,7 @@ export default function AllNotes () {
                     user: {note.username} -- 
                     <br/>
                     repo: {note.name}
-                    <br/>
+                    <br/>npm start
                     {note.comment}
                     <hr/>
 
