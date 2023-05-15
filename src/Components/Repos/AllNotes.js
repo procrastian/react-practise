@@ -53,6 +53,19 @@ export default function AllNotes () {
                 <input type='submit' value={'search'} />
             </form>
             <ul>
+<<<<<<< HEAD
+                {notes.map((note) => (
+                <li>
+                    user: {note.username} -- 
+                    <br/>
+                    repo: {note.name}
+                    <br/>npm start
+                    {note.comment}
+                    <hr/>
+
+                </li>
+            ))}
+=======
                 {filteredNotes.map((note) => (
                     <li key={note.id}>
                         user: {note.username} --
@@ -64,7 +77,7 @@ export default function AllNotes () {
                         <p>{(new Date(Date.parse(note.timestamp))).toLocaleDateString()} {(new Date(Date.parse(note.timestamp))).toLocaleTimeString()} </p>
                         <hr />
                     </li>
-                )).reverse()}
+                ))}
             </ul>
         </>
     );
