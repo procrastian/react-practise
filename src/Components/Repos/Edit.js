@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function Edit() {
@@ -18,18 +18,7 @@ function Edit() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log({ comment });
-
-    /* const newComment = notes.map((item) => {
-      if (item.comment === comment) {
-        return {
-          ...comment,
-          comment:  {comment} ,
-        };
-      } else {
-        return item;
-      }
-    }); */
-
+  
     const opts = {
       method: "PATCH",
       headers: {
@@ -39,13 +28,24 @@ function Edit() {
         comment: `${comment}`,
       }),
     };
-
+  
     fetch(`http://localhost:4000/notes/${params.id}`, opts)
       .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
+      .then(() => {
+        const newComment = notes.map((item) => {
+          if (item.comment === comment) {
+            return {
+              ...comment,
+              comment:  {comment} ,
+            };
+          } else {
+            return item;
+          }
+        });
+       
+        setNotes(...notes,newComment);
+        navigate(`/${params.username}/${params.reponame}`);
       });
-    navigate(`/${params.username}/${params.reponame}`);
   }
 
   const changeComment = (e) => {
@@ -69,9 +69,12 @@ function Edit() {
                   cols={30}
                   defaultValue={note.comment}
                   value={comment}
+                  required
                 />
                 <br />
-                <button type="submit">Update</button>
+             
+                  <button type="submit">Update</button>
+            
               </form>
             </>
           )

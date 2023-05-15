@@ -5,9 +5,7 @@ export default function Repo() {
   const [repo, setRepo] = useState({});
   const [notFound, setNotFound] = useState(false);
   const [notes, setNotes] = useState([]);
-  const [deleted, setDeleted] = useState([])
 
-  const test = "test";
 
   const params = useParams();
 
@@ -30,12 +28,11 @@ export default function Repo() {
     fetch("http://localhost:4000/notes")
       .then((res) => res.json())
       .then((data) => setNotes(data))
-  }, [deleted]);
+  }, [setNotes]);
 
-
-
-  
+ 
   const handleDelete = (e) => {
+
     let id = e.target.value;
     console.log("my id", id);
 
@@ -45,16 +42,25 @@ export default function Repo() {
         return note;
       }
     });
-
     setNotes(filteredComments);
 
     const opts = {
       method: "DELETE",
     };
     fetch(`http://localhost:4000/notes/${id}`, opts)
-      .then((res) => res.text())
-      .then((res) => setDeleted(res));
+    .then(response => response.json())
+    .then(() => {
+      fetch("http://localhost:4000/Notes")
+      .then(res => res.json())
+      .then(data => {
+        setNotes(data)
+        console.log(data)
+      })
+    })
   };
+
+  
+ 
 
   return (
     <>
@@ -81,8 +87,7 @@ export default function Repo() {
               className={"repoLink"}
               to={`/${params.username}/${params.reponame}/notes/add`}
             >
-              {" "}
-              <button>Add a new comment</button>
+              <button >Add a new comment</button>
             </Link>
             <ul>
               {notes
@@ -94,7 +99,6 @@ export default function Repo() {
                         <li>
                           {note.comment}
                           <Link
-                            test={test}
                             className="repoLink"
                             to={`/${params.username}/${params.reponame}/notes/${note.id}/edit`}
                           >
