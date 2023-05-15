@@ -32,18 +32,6 @@ function Edit() {
     fetch(`http://localhost:4000/notes/${params.id}`, opts)
       .then((response) => response.json())
       .then(() => {
-        const newComment = notes.map((item) => {
-          if (item.comment === comment) {
-            return {
-              ...comment,
-              comment:  {comment} ,
-            };
-          } else {
-            return item;
-          }
-        });
-       
-        setNotes(...notes,newComment);
         navigate(`/${params.username}/${params.reponame}`);
       });
   }

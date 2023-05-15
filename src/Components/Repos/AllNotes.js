@@ -31,7 +31,6 @@ export default function AllNotes () {
         } else {
            const filteredNotes = notes.filter((note) => {
                 return note.comment.toLowerCase().includes(searchTerm.toLowerCase());
-
             });
             setFilteredNotes(filteredNotes);
         }
@@ -54,19 +53,6 @@ export default function AllNotes () {
                 <input type='submit' value={'search'} />
             </form>
             <ul>
-<<<<<<< HEAD
-                {notes.map((note) => (
-                <li>
-                    user: {note.username} -- 
-                    <br/>
-                    repo: {note.name}
-                    <br/>npm start
-                    {note.comment}
-                    <hr/>
-
-                </li>
-            ))}
-=======
                 {filteredNotes.map((note) => (
                     <li key={note.id}>
                         user: {note.username} --
@@ -74,12 +60,12 @@ export default function AllNotes () {
                         repo: {note.name}
                         <br />
                         {note.comment}
+                        <br />
+                        <p>{(new Date(Date.parse(note.timestamp))).toLocaleDateString()} {(new Date(Date.parse(note.timestamp))).toLocaleTimeString()} </p>
                         <hr />
                     </li>
-                ))}
->>>>>>> 5e6b7195236c241832a0e46977aef8c9f13e2fad
+                )).reverse()}
             </ul>
         </>
     );
 }
-

@@ -15,7 +15,6 @@ export default function App() {
         {/* <AppTitle projectTitle={projectTitle}/> */}
         {/* <MessageBoard /> */}
         {/* <DiceRoller /> */}
-
         <>
           <Link to='/'>HOME</Link>
           <Link to='/notes'>ALL NOTES</Link>

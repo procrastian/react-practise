@@ -1,12 +1,8 @@
 import { useState } from "react"
 import { Link } from "react-router-dom";
 
-
-
 function Home () {
     const [username, setUsername] = useState('')
-
-
 
     const handleUsername = (e) => {
         setUsername(e.target.value)
@@ -25,9 +21,6 @@ function Home () {
         </form>
         </>
     )
-
-    
-
 }
 
 export default Home

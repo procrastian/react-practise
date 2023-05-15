@@ -1,83 +1,32 @@
 {
   "notes": [
     {
-      "id": 0.5734087035840797,
-      "name": "developer-environment-setup",
-      "comment": "New comment here\n",
-      "username": "carolarruda"
-    },
-    {
-      "id": 0.4909790332742836,
-      "name": "Ca2",
-      "comment": "123",
-      "username": "timmyctt"
-    },
-    {
-      "id": 0.650792611600538,
-      "name": "Ca2",
-      "comment": "4567",
-      "username": "timmyctt"
-    },
-    {
-      "id": 0.4307795586594696,
-      "name": "html-boolean-image-grid",
-      "comment": "loooooooks gooooood",
-      "username": "timmyctt"
-    },
-    {
-      "id": 0.9758548237672344,
-      "name": "developer-environment-setup",
-      "comment": "woooo!!!!!",
-      "username": "carolarruda"
-    },
-    {
-      "id": 0.05815860664895944,
-      "name": "html-boolean-image-grid",
-      "comment": "Alex say's it's easy!",
-      "username": "alexjshaw"
-    },
-    {
-<<<<<<< HEAD
-      "id": 0.9692747903461336,
       "name": "cohort-10-react-demo",
-      "comment": "123",
-      "username": "procrastian"
+      "comment": "Adding a test. this was updated",
+      "username": "carolarruda",
+      "timestamp": "2023-05-15T12:23:22.131Z",
+      "id": 1
     },
     {
-      "id": 0.3365284208768564,
       "name": "cohort-10-react-demo",
-      "comment": {},
-      "username": "procrastian"
-=======
-      "id": 0.4872334154529703,
-      "name": "cohort-10-react-demo",
-      "comment": "10",
-      "username": "carolarruda"
+      "comment": "A new one with another edited",
+      "username": "carolarruda",
+      "timestamp": "2023-05-15T12:23:26.408Z",
+      "id": 2
     },
     {
-      "id": 0.21705512184343978,
       "name": "cohort-10-react-demo",
-      "comment": "2",
-      "username": "carolarruda"
+      "comment": "tst tst",
+      "username": "procrastian",
+      "timestamp": "2023-05-15T12:24:26.292Z",
+      "id": 3
     },
     {
-      "id": 0.5133434175723361,
       "name": "cohort-10-react-demo",
-      "comment": "3",
-      "username": "carolarruda"
-    },
-    {
-      "id": 0.5036150887397011,
-      "name": "cohort-10-react-demo",
-      "comment": "5",
-      "username": "carolarruda"
-    },
-    {
-      "id": 0.6055150304225058,
-      "name": "cohort-10-react-demo",
-      "comment": " s",
-      "username": "carolarruda"
->>>>>>> 5e6b7195236c241832a0e46977aef8c9f13e2fad
+      "comment": "test test 2",
+      "username": "procrastian",
+      "timestamp": "2023-05-15T12:24:30.980Z",
+      "id": 4
     }
   ]
 }
