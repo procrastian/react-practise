@@ -1,12 +1,6 @@
 {
   "notes": [
     {
-      "id": 1,
-      "name": "cohort-10-react-demo",
-      "comment": "Save it",
-      "username": "carolarruda"
-    },
-    {
       "id": 0.5734087035840797,
       "name": "developer-environment-setup",
       "comment": "New comment here\n",
@@ -53,6 +47,36 @@
       "name": "html-boolean-image-grid",
       "comment": "Alex say's it's easy!",
       "username": "alexjshaw"
+    },
+    {
+      "id": 0.4872334154529703,
+      "name": "cohort-10-react-demo",
+      "comment": "10",
+      "username": "carolarruda"
+    },
+    {
+      "id": 0.21705512184343978,
+      "name": "cohort-10-react-demo",
+      "comment": "2",
+      "username": "carolarruda"
+    },
+    {
+      "id": 0.5133434175723361,
+      "name": "cohort-10-react-demo",
+      "comment": "3",
+      "username": "carolarruda"
+    },
+    {
+      "id": 0.5036150887397011,
+      "name": "cohort-10-react-demo",
+      "comment": "5",
+      "username": "carolarruda"
+    },
+    {
+      "id": 0.6055150304225058,
+      "name": "cohort-10-react-demo",
+      "comment": " s",
+      "username": "carolarruda"
     }
   ]
 }
